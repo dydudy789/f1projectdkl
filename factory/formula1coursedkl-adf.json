@@ -1,0 +1,9 @@
+{
+	"name": "formula1coursedkl-adf",
+	"location": "australiaeast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "73e524f9-fc85-4791-a894-0f314924be63",
+		"tenantId": "83696c1e-1424-49cd-b492-d64f3e551ee4"
+	}
+}
