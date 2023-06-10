@@ -38,6 +38,16 @@ Save the 8 datasets into Azure Blob Storage 'raw' container.
 
 ![alt text](https://user-images.githubusercontent.com/21047696/244872399-d5e08bfa-1bf2-4fc7-b46a-87e8df76302d.png)
 
+Races data is incrementally loaded as races data can get updated each week. Other files are fullly loaded. 
+
+The raw data is then processed using Databricks Notebooks to ingest into the 'processed' layer. The data will have schema applied, and stored as Delta Lake to allow time travel and GDPR (General Data Projection Regulation).
+
+Ingested data is then transformed via Azure Databricks notebooks again, and results are stored in the presentation layer. Power BI is connected to the presentation layer. 
+
+Azure Data Factory will be set as a scheduling solution for this project. 
+
+
+
 
 Other model architectures can be seen here for reference: https://learn.microsoft.com/en-us/azure/architecture/browse/?filter-products=databr&products=azure-databricks
 
