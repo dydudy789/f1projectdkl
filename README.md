@@ -31,14 +31,16 @@ Azure Data Factory
 
 # Setup
 
-Setup HTTP connector in ADF to get data from website regarding conformed cases, mortality, hospitalization/ICU cases (3 files). 
-
-Save populations file in Azure Blob Storage (to practise transferring to data lake through ADF). 
+Save the 8 datasets into Azure Blob Storage 'raw' container. 
 
 
 # Architecture
 
-![alt text](https://user-images.githubusercontent.com/21047696/241493403-d0ea6b13-c593-4da9-b2a3-e026a704bee9.png)
+![alt text](https://user-images.githubusercontent.com/21047696/244872399-d5e08bfa-1bf2-4fc7-b46a-87e8df76302d.png)
+
+
+Other model architectures can be seen here for reference: https://learn.microsoft.com/en-us/azure/architecture/browse/?filter-products=databr&products=azure-databricks
+
 
 ### Population data:
 
