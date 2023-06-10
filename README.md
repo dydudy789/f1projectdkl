@@ -3,7 +3,10 @@ This is a data engineering project regarding f1 racing data, assisted by a data 
 
 
 # Datasets
-Confirmed cases, mortality, hospitalization/ICU cases, covid testing numbers, Country's population by age group from ECDC website (European Centre for Disease Control) 
+Ergast API is a third party developer API called Ergaste that makes data available from all F1 races from 1950 onwards. CSV Database Tables were downloaded from the Ergast website
+
+# ER Diagram
+![alt text](https://user-images.githubusercontent.com/21047696/244870072-1be325de-eee2-45e7-9c54-89ca974da799.png)
 
 # Technologies
 **Storage:**
