@@ -3,7 +3,17 @@ This is a data engineering project regarding f1 racing data, assisted by a data 
 
 
 # Datasets
-Ergast API is a third party developer API called Ergaste that makes data available from all F1 races from 1950 onwards. CSV Database Tables were downloaded from the Ergast website
+Ergast API is a third party developer API called Ergaste that makes data available from all F1 races from 1950 onwards. CSV Database Tables were downloaded from the Ergast website. 8 datasets were used for this project. Some were converted to other formats (Single Line JSON, Multi Line JSON, Split CSV files, etc) for practising ingestion of various data types.
+
+Circuits:     CSV
+Races:        CSV
+Constructors: Single Linke JSON
+Drivers:      Single Line Nested JSON
+Results:      Single Line JSON
+PitStops:     Multi Line JSON
+LapTimes:     Split CSV Files
+Qualifying:   Split Multi Line JSON Files
+
 
 # ER Diagram
 ![alt text](https://user-images.githubusercontent.com/21047696/244870072-1be325de-eee2-45e7-9c54-89ca974da799.png)
@@ -15,8 +25,6 @@ Azure Blob Storage
 
 **Transformations:**
 Databricks
-HDInsight
-Data Flows
 
 **Orchestration:**
 Azure Data Factory
