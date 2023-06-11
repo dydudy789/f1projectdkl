@@ -33,6 +33,7 @@ Azure Data Factory
 
 Save the 8 datasets into Azure Blob Storage 'raw' container. 
 
+Follow the instructions in this link to mount the ADLS to Databricks: https://learn.microsoft.com/en-us/azure/databricks/dbfs/mounts
 
 # Architecture
 
