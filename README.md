@@ -66,6 +66,7 @@ Datasets were adjusted (e.g. variables renamed, date variables transformed to ti
 Steps:
 * Joined races and circuits datasets to get race_id, race_year, race_name, race_date, and circuit_location
 * Then joined with results, drivers, and contructors datasets to get the remaining variables (e.g. driver_name, driver_number, driver_nationality, team, race_time, points, position, results_file_date)
+* Used the merge_delta_data function to
 
 Data from the race_results dataset can be used to create the BBC F1 race results dashbaord: https://www.bbc.com/sport/formula1/drivers-world-championship/standings
 
@@ -80,6 +81,7 @@ Data from the race_results dataset can be used to create the BBC F1 race results
 Steps:
 * Grouped the race dataset by race_year, driver_name and driver_nationality to get the total points and number of wins by each driver.
 * Use the window function to assign rank to drivers. Partitioned by race_year, driver were ranked by total points and then number of wins in descending order.
+* Used the merge_delta_data function to
 
 Data from the driver_standings dataset can be used to create the BBC F1 driver standings dashbaord: https://www.bbc.com/sport/formula1/drivers-world-championship/standings
 
