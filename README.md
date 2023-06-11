@@ -65,6 +65,10 @@ Steps:
 * Joined races and circuits datasets to get race_id, race_year, race_name, race_date, and circuit_location
 * Then joined with results, drivers, and contructors datasets to get the remaining variables (e.g. driver_name, driver_number, driver_nationality, team, race_time, points, position, results_file_date)
 
+Data from the races dataset can be used to create the BBC F1 race results dashbaord: https://www.bbc.com/sport/formula1/drivers-world-championship/standings
+
+![alt text](https://user-images.githubusercontent.com/21047696/244937668-a3c20c0c-e0f0-4a90-b2f9-51d02c840696.png)
+
 
 
 ### Confirmed cases and hospital admissions data:
