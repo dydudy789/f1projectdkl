@@ -57,16 +57,13 @@ Other model architectures can be seen here for reference: https://learn.microsof
 
 Datasets were adjusted (e.g. variables renamed, date variables transformed to timestamp, and ingestion dates added) and put in the 'processed' folder. They were then combined and further transformed and put in the 'presentation' folder. 
 
+
 **CREATING 'RACE_RESULTS' DATASET IN PRESENTATION LAYER FROM MULTIPLE DATASETS IN PROCESSED LAYER**
 ![alt text](https://user-images.githubusercontent.com/21047696/244936596-1f309b16-0a15-40fc-8552-4e78341fd277.png)
 
-Transformations:
-* Split columns
-* Renamed columns
-* Treated missing values as null
-* Joined with lookup table to get country name
-* Unwanted years removed
-* Pivotted table to make age variables as columns instead of values.
+Steps:
+* Joined races and circuits datasets to get race_id, race_year, race_name, race_date, and circuit_location
+* Then joined with results, drivers, and contructors datasets to get the remaining variables (e.g. driver_name, driver_number, driver_nationality, team, race_time, points, position, results_file_date)
 
 
 
