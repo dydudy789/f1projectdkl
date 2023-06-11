@@ -53,11 +53,9 @@ Azure Data Factory will be set as a scheduling solution for this project.
 Other model architectures can be seen here for reference: https://learn.microsoft.com/en-us/azure/architecture/browse/?filter-products=databr&products=azure-databricks
 
 
-### Population data:
+### Processing and Transformations:
 
-ADF detects if population data lands in Azure Blob Storage through trigger. It invokes pipelines to 
-copy the file into Azure Data Lake, raw file and delete it from Blob storage. 
-apply transformations in Databricks and save the processed file into Data lake's 'proccessed' file.
+Datasets were adjusted (e.g. variables renamed, date variables transformed to timestamp, and ingestion dates added) and put in the 'processed' folder. They were then combined and further transformed and put in the 'presentation' folder. 
 
 **RAW POPULATION FILE**
 ![alt text](https://user-images.githubusercontent.com/21047696/241617306-0cb8ef26-9fa9-4130-9af8-62b637b0c1ab.png)
