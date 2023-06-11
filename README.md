@@ -57,12 +57,8 @@ Other model architectures can be seen here for reference: https://learn.microsof
 
 Datasets were adjusted (e.g. variables renamed, date variables transformed to timestamp, and ingestion dates added) and put in the 'processed' folder. They were then combined and further transformed and put in the 'presentation' folder. 
 
-**RAW POPULATION FILE**
-![alt text](https://user-images.githubusercontent.com/21047696/241617306-0cb8ef26-9fa9-4130-9af8-62b637b0c1ab.png)
-
-**TRANSFORMED POPULATION FILE**
-
-![alt text](https://user-images.githubusercontent.com/21047696/241617300-6328f60b-7088-4b82-9764-a57ffc25620c.png)
+**CREATING 'RACE_RESULTS' DATASET IN PRESENTATION LAYER FROM MULTIPLE DATASETS IN PROCESSED LAYER**
+![alt text](https://user-images.githubusercontent.com/21047696/244936596-1f309b16-0a15-40fc-8552-4e78341fd277.png)
 
 Transformations:
 * Split columns
