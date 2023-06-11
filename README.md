@@ -75,7 +75,7 @@ Data from the race_results dataset can be used to create the BBC F1 race results
 
 
 **CREATING 'DRIVER_STANDINGS' DATASET IN PRESENTATION LAYER**
-![alt text](https://user-images.githubusercontent.com/21047696/244937663-7b95f97a-a503-44c9-b59a-1c95f59713dc.png)
+![alt text](https://user-images.githubusercontent.com/21047696/244939171-16d2ce34-d06e-47eb-8cfb-9fc6fbec78e6.png)
 
 Steps:
 * Grouped the race dataset by race_year, driver_name and driver_nationality to get the total points and number of wins by each driver.
