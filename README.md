@@ -89,66 +89,11 @@ Data from the driver_standings dataset can be used to create the BBC F1 driver s
 
 
 
+**IMPLEMENTING INCREMENTAL LOAD THROUGH DELTA LAKE MERGE**
+Circuits, races, contructors and drivers datasets are full loads as they do not change from race to race. 
+Retults, pit_stops, lap_times, qualifying datasets are updated frequently and so incremental load is implemented.
 
+Delta Lake doesn't support partition overwrite mode. But delta lake allows updates on individual records even when only part of of parition information is available.
+The merge code checks if the dataset exists and creates the dataset if it doesn't exist. If it exists, it checks if the provided merge condition is matched and updates the record if it matches. Otherwise it inserts the new record. 
 
-
-
-
-
-
-
-
-
-
-### Confirmed cases and hospital admissions data:
-
-ADF tumbling window triggers run everyday at midnight to access the website for data. 
-ADF pipeline goes through a lookup list of files to get from the websiite and copies them to data lake. raw file. 
-Additional triggers for proccessing in Data flow is invokes when the first trigger is successful. Data is transformed in Data flow and saved in processed file in data lake.
-ADF also copies the files into Azure SQL Database so it can be accessed for analysis and dashboarding. 
-
-**EXAMPLE DATA FLOW TRANSFORMATION IN ADF**
-![alt text](https://user-images.githubusercontent.com/21047696/241617322-a4300dc1-4b2a-4f14-b986-3dd01e7f848a.png)
-
-**RAW CASES AND DEATHS DATA**
-![alt text](https://user-images.githubusercontent.com/21047696/241617336-faff80de-9b76-4880-a60b-5900903adf84.png)
-
-**TRANSFORMED CASES AND DEATHS DATA**
-![alt text](https://user-images.githubusercontent.com/21047696/241617347-66fbae1e-2f6a-433d-bbcf-a655c1fff54c.png)
-
-Transformations:
-* Filterd for Europe data only
-* Selected only required fields and renamed them
-* Pivoted the 'indicator' column to make cases_count and deaths_count as columns instead of values
-
-### Testing data:
-For practise testing data was transformed in HD Insight.
-Transformed files were copied into Azure SQL Database for analysis and dashboarding.
- 
- Process within HD Insight Script:
-* Create external tables for lookup files (dim_date, dim_country) and raw data (raw testing data). These tables are built on files from Azure Data Lake.
-* Also create external table to the destination data, testing data in the processed file.
-* Join lookup tables to the raw testing data and apply transformations and INSER TABLE into the destination location.
-
-
-**EXAMPLE SQL TRANSFORMATION WITHIN HD INSIGHT**
-![alt text](https://user-images.githubusercontent.com/21047696/241744814-88916c7c-7e2f-4bc1-9191-edf23407c2b6.png)
-
-# Triggers 
-**Population Data:** Events trigger was used to detect the population data landing on Azure Blob Storage to then process the ingestion into data lake, deletion from Blob storage, transformation, and copying to SQL.
-
-**Cases/Deaths Data:**
-* Tumbling window trigger is used which runs everyday at midnight to get cases/deaths data from the website and ingest it into Data lake. 
-* Tumbling windows triggers for procesing is dependant on the ingestion trigger, and trigger to copying to SQL DB is dependent on the processing trigger. 
-
-# Power BI Dashboard
-
-Power BI directly import the datasets from SQL database using server and database name and the database credentials.
-
-The charts show trend of covid cases, deaths, hospital and and icu occupancy. They are filterable by country and date. 
-
-![alt text](https://user-images.githubusercontent.com/21047696/243354299-173a6f18-4dc2-4394-b6cd-13ee58513cd0.png)
-
-![alt text](https://user-images.githubusercontent.com/21047696/243354367-8c11ad90-5472-4637-bc11-14bf8cfbe947.png)
-
-
+![alt text](https://user-images.githubusercontent.com/21047696/245155484-9d155e4d-a133-4678-913a-2a8e1364f7a8.png)
