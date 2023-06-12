@@ -95,5 +95,6 @@ Retults, pit_stops, lap_times, qualifying datasets are updated frequently and so
 
 Delta Lake doesn't support partition overwrite mode. But delta lake allows updates on individual records even when only part of of parition information is available.
 The merge code checks if the dataset exists and creates the dataset if it doesn't exist. If it exists, it checks if the provided merge condition is matched and updates the record if it matches. Otherwise it inserts the new record. 
+For the merge condition you may be more specific to improve performance. For example the results_id can be used for merge condition ofr results file, but as the data is partitioned by race_id, you can use both to improve performance (e.g. "tgt.result_id = src.result_id AND tgt.race_id = src.race_id"). 
 
 ![alt text](https://user-images.githubusercontent.com/21047696/245155484-9d155e4d-a133-4678-913a-2a8e1364f7a8.png)
